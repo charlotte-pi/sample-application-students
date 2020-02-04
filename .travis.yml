@@ -1,5 +1,8 @@
 language: java
 
+sudo: false
+install: false
+
 script: 
     - mvn dependency:go-offline
     - mvn clean verify
