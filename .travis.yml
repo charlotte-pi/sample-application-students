@@ -1,8 +1,5 @@
 language: java
 
-
-before-install:
-    - mvn dependency:go-offline
-
 script: 
+    - mvn dependency:go-offline
     - mvn clean verify
