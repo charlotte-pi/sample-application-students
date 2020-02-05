@@ -13,6 +13,6 @@ script:
     - docker build -t kyalarys/sample-cpe:api sample-application-http-api-server
     - docker build -t kyalarys/sample-cpe:db sample-application-db-changelog-job
 
-    - docker login -u kyalarys -p $DOCKER_HUB_SECRET
+    - docker login -u kyalarys -p "$Docker_Hub"
     - docker push kyalarys/sample-cpe:api
     - docker push kyalarys/sample-cpe:db
