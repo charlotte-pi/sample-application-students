@@ -6,23 +6,23 @@ cache:
 
 jobs:
     include: 
-        
+
         - stage: test
-        addons:
+          addons:
             sonarcloud:
                 organization: "$SONARCLOUD_ORGANIZATION" # the key of the org you chose at step #3
                 token:
                     secure: "$SONARCLOUD_TOKEN" # encrypted value of your token
 
-        script: 
+          script: 
             # Test 
             - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey="$SONARCLOUD_PROJECT_KEY"
         
         - stage: build
-        services: 
+          services: 
             - docker
 
-        script:     
+          script:     
             # Build Java
             - mvn package -DskipTests
 
