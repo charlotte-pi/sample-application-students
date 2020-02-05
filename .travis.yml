@@ -5,5 +5,4 @@ cache:
         - "$HOME/.m2/repository"
 
 script: 
-    - mvn dependency:go-offline
     - mvn clean verify
