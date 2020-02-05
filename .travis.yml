@@ -10,9 +10,9 @@ services:
 script: 
     - mvn clean verify
     
-    - docker build -t kyalarys/sample-cpe:api sample-application-http-api-server
-    - docker build -t kyalarys/sample-cpe:db sample-application-db-changelog-job
+    - docker build -t "$DOCKER_USERNAME"/sample-cpe:api sample-application-http-api-server
+    - docker build -t "$DOCKER_USERNAME"/sample-cpe:db sample-application-db-changelog-job
 
-    - docker login -u kyalarys -p "$Docker_Hub"
-    - docker push kyalarys/sample-cpe:api
-    - docker push kyalarys/sample-cpe:db
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - docker push "$DOCKER_USERNAME"/sample-cpe:api
+    - docker push "$DOCKER_USERNAME"/sample-cpe:db
