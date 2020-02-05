@@ -6,3 +6,6 @@ cache:
 
 script: 
     - mvn clean verify
+    - docker login kyalarys -p $DOCKER_HUB_SECRET
+    - docker build -t kyalarys/sample-api
+    - docker push kyalarys/sample-api
